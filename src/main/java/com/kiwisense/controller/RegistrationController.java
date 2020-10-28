@@ -50,7 +50,6 @@ public class RegistrationController {
 				new UsernamePasswordAuthenticationToken(changePasswordRequest.getEmail(), changePasswordRequest.getPassword()));
 		User user = userService.getUser(changePasswordRequest.getEmail());
 		user.setPassword(encoder.encode(changePasswordRequest.getPassword()));
-
 		userService.saveUser(user);
 
 		return ResponseEntity.ok(new MessageResponse("changed password successfully!"));
