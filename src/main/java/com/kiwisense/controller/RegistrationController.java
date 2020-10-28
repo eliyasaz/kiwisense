@@ -49,7 +49,7 @@ public class RegistrationController {
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(changePasswordRequest.getEmail(), changePasswordRequest.getPassword()));
 		User user = userService.getUser(changePasswordRequest.getEmail());
-		user.setPassword(encoder.encode(changePasswordRequest.getPassword()));
+		user.setPassword(encoder.encode(changePasswordRequest.getNewPassword()));
 		userService.saveUser(user);
 
 		return ResponseEntity.ok(new MessageResponse("changed password successfully!"));
