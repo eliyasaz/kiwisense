@@ -4,15 +4,15 @@ import javax.validation.constraints.NotBlank;
 
 public class ChangePasswordRequest extends LoginRequest {
 	@NotBlank
-	private String confirPassword;
+	private String newPassword;
 
-	public String getConfirPassword() {
-		return confirPassword;
+	public String getNewPassword() {
+		return newPassword;
 	}
 
-	public void setConfirPassword(String confirPassword) {
-		this.confirPassword = confirPassword;
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
-
+	
 
 }
