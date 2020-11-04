@@ -40,8 +40,6 @@ public class JwtUtils {
 	}
 
 	public String getEmailFromJwtToken(String token) {
-		
-		System.out.println("token   is  "+ token);
 		return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
 	}
 
